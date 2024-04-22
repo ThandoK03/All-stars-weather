@@ -30,3 +30,24 @@ p {
   color: #fff;
   margin: 8px 0;
 }
+input {
+  width: calc(100%-16px);
+  padding: 8px;
+  box-sizing: border-box;
+  border-radius: 10px;
+  border: 1px solid white;
+  margin-top: 20px;
+}
+button {
+  background: #f09819;
+  color: white;
+  padding: 6px;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-top: 20px;
+  width: 100px;
+  font-size: 15px;
+}
+button:hover {
+  background: #ff5858;
+}
