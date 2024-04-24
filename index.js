@@ -9,3 +9,5 @@ function getWeather() {
 }
 let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}`;
 let apiForecast = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}`;
+
+axios.get(apiUrl).then(getWeather);
