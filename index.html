@@ -8,28 +8,32 @@
   <script src="https://unpkg.com/axios@1.6.7/dist/axios.min.js"></script>
 </head>
   <body>
-    <div class="weather-container"
-<header>
-        <form>
+    <div class="weather-container">
+    <header></header>
+        <form class="search-form">
         <input type="search" id="city"
-        placeholder="Enter your city..." required>
-        <input type="submit" value="search"
+        placeholder="Enter your city..." required class="search-input">
+        <input type="submit" value=Search class="search-button">
         </form>
-        
-</header>
+    </header>
 <main>
+    <div class="app-data">
     <div>
-    <h1>Paris</h1>
-    <p>
+    <h1
+    class="app-city">Paris</h1>
+    <p class="app-details ">
         Tuesday 14:50, scattered clouds
     </br>
-    Humidity:66%, Wind:3.12km/h
+    Humidity:<strong>66%</strong>, Wind:<strong>3.12km/h </strong>
     </p>
     </div>
-<div>⛅12°C</div>
+<div class="app-container">
+    <div class="app-icon">⛅</div><div class="app-temp-value"> 12</div>
+    <div class="app-unit"> °C</div>
+    </div>
 </main>
    <script src="index.js"></script>
-    <footer id="coder">
+    <footer>
 Coded by <a href="https://github.com/ThandoK03" target="_blank" >Thando Kheswa</a> is
   <a
     href="https://github.com/ThandoK03/All-stars-weather" target="_blank"
