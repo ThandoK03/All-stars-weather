@@ -1,13 +1,18 @@
-function getWeather() {
+function updateWeatherData(response) {}
+
+function searchCity(city) {
   let apiKey = "853f9fa9a83fbe77003t40d42014oc36";
-
-  let city = document.getElementById("city").value;
-  if (!city) {
-    alert("Please enter a city");
-    return;
-  }
+  let apiUrl = `"https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric"`;
+  axios.get(apiUrl).then(updateWeatherData);
 }
-let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}`;
-let apiForecast = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}`;
 
-axios.get(apiUrl).then(getWeather);
+function searchSubmit(event) {
+  event.preventDefault();
+  let searchInput = document.querySelector("#search-input");
+  let cityElement = document.querySelector("#city");
+  cityElement.innerHTML = searchInput.value;
+  searchCity(searchInput.value);
+}
+
+let searchFormElement = document.querySelector("#search-form");
+searchFormElement.addEventListener("submit", searchSubmit);
