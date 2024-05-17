@@ -32,15 +32,36 @@ function formatDate(date) {
   let day = days[date.getDay()];
 
   if (minutes < 10) {
-    minutes = `0${minutes}}`;
+    minutes = `0${minutes}`;
   }
 
   return `${day} ${hours}:${minutes}`;
+}
+function displayForecast() {
+  let forecast = document.querySelector("#forecast");
+
+  let days = ["Thu", "Fri", "Sat", "Sun", "Mon"];
+  days.forEach(function (day) {
+    forecast.innerHTML = `<
+div class="weather-forecast-day">
+<div class="weather-forecast-date">
+  ${day}
+</div>
+<img src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/rain-day.png" class="weather-forecast-icon"> 
+<div class="weather-forecast-temperatures">
+  <strong>20°</strong>
+</div>
+<div class="weather-forecast-temperature">
+14°
+</div>
+</div>`;
+  });
 }
 
 function searchCity(city) {
   let apiKey = "853f9fa9a83fbe77003t40d42014oc36";
   let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
+  let forecastUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}`;
   axios.get(apiUrl).then(displayTemperature);
 }
 
@@ -54,3 +75,4 @@ let searchFormElement = document.querySelector("#search-form");
 searchFormElement.addEventListener("submit", handleSearchSubmit);
 
 searchCity("Miami");
+displayForecast();
