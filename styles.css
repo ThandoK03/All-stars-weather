@@ -22,7 +22,6 @@ strong {
   color: #f65282;
 }
 div {
-  display: block;
   unicode-bidi: isolate;
 }
 
@@ -99,9 +98,10 @@ div {
 }
 
 .weather-forecast {
-  display: inline-block;
-  justify-content: space-between;
+  display: flex;
+  justify-content: space-around;
   margin-top: 30px;
+  flex-wrap: wrap;
 }
 .weather-forecast-unit {
   margin-top: 6px;
@@ -126,7 +126,7 @@ div {
   color: #f65282;
   margin-top: 10px;
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
 }
 .weather-forecast-temperature {
   padding: 0 10px;

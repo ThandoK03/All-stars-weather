@@ -92,7 +92,7 @@ ${Math.round(day.temperature.minimum)}°</div>
 `;
     }
   });
-  let forecastElement = document.querySelector("#forecast");
+  let forecastElement = document.querySelector("#weather-forecast");
   forecastElement.innerHTML = forecastHtml;
 }
 
